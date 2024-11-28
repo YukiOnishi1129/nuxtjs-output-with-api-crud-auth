@@ -5,11 +5,11 @@ dcu-dev:
 
 
 front-ssh:
-	docker exec -it nestjs_output_with_crud_auth_frontend sh
+	docker exec -it nuxtjs_output_with_crud_auth_frontend sh
 backend-ssh:
-	docker exec -it nestjs_output_with_crud_auth_backend sh
+	docker exec -it nuxtjs_output_with_crud_auth_backend sh
 db-ssh:
-	docker exec -it nestjs_output_with_crud_auth_db /bin/bash
+	docker exec -it nuxtjs_output_with_crud_auth_db /bin/bash
 
 
 # DB関連
@@ -18,7 +18,7 @@ db-setup:
 	make db-migrate && make db-seed
 # マイグレーション
 db-migrate:
-	docker exec -it nestjs_output_with_crud_auth_backend sh -c "npm run migrate"
+	docker exec -it nuxtjs_output_with_crud_auth_backend sh -c "npm run migrate"
 # シーディング
 db-seed:
-	docker exec -it nestjs_output_with_crud_auth_backend sh -c "npm run seed"
+	docker exec -it nuxtjs_output_with_crud_auth_backend sh -c "npm run seed"

@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   frontend:
-    container_name: nestjs_output_with_crud_auth_frontend
+    container_name: nuxtjs_output_with_crud_auth_frontend
     build: ./web-front
     tty: true
     ports:
@@ -15,7 +15,7 @@ services:
       - seccomp:unconfined
     command: sh -c 'npm install && npm run dev'
   backend:
-    container_name: nestjs_output_with_crud_auth_backend
+    container_name: nuxtjs_output_with_crud_auth_backend
     build: ./api-server
     tty: true
     depends_on:
@@ -32,9 +32,9 @@ services:
     command: sh -c 'npm install && npm run start:dev'
 
   db:
-    container_name: nestjs_output_with_crud_auth_db
+    container_name: nuxtjs_output_with_crud_auth_db
     environment:
-      - MYSQL_DATABASE=NEXTJS_OUTPUT_WITH_CRUD_AUTH_DB
+      - MYSQL_DATABASE=NUXTJS_OUTPUT_WITH_CRUD_AUTH_DB
       - MYSQL_USER=user
       - MYSQL_PASSWORD=pass
       - MYSQL_ROOT_PASSWORD=pass
@@ -42,11 +42,11 @@ services:
     image: mysql:8.0
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     volumes:
-      - nestjs_output_with_crud_auth_data:/var/lib/mysql
+      - nuxtjs_output_with_crud_auth_data:/var/lib/mysql
       - ./mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
       - ./mysql:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
 
 volumes:
-  nestjs_output_with_crud_auth_data:
+  nuxtjs_output_with_crud_auth_data:

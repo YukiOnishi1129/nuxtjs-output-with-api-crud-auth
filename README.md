@@ -1,15 +1,18 @@
-# nextjs-output-with-api-crud-auth
+# nuxtjs-output-with-api-crud-auth
 
 ## 技術構成
 
 ### フロントエンド
 
-- typescript: 4.8.4
-- react: 18.2.0
-- react-dom: 18.2.0
-- next: 12.3.1
-- @fortawesome/react-fontawesom: 0.2.0
-- @fortawesome/free-solid-svg-icons: 6.2.0
+- typescript: 5.7.2
+- nuxt: 3.14.1592
+- vue: latest
+- vue-router: latest
+- @fortawesome/fontawesome-svg-core: 6.6.0
+- @fortawesome/free-brands-svg-icons: 6.6.0
+- @fortawesome/free-regular-svg-icons: 6.6.0
+- @fortawesome/free-solid-svg-icons: 6.6.0
+- @fortawesome/vue-fontawesome: 3.0.8
 
 ### バックエンド
 
@@ -104,7 +107,7 @@ password: password
 ```
 DBMS: mysql: 8.0
 host: 127.0.0.1
-database: NEXTJS_OUTPUT_WITH_CRUD_AUTH_DB
+database: NUXTJS_OUTPUT_WITH_CRUD_AUTH_DB
 user: user
 password: pass
 port: 3306
@@ -136,8 +139,8 @@ docker ps
 
 各イメージに対応する コンテナ ID を確認
 
-- バックエンド: nextjs-output-with-api-crud-auth_backend
-- フロントエンド: nextjs-output-with-api-crud-auth_frontend
+- バックエンド: nuxtjs-output-with-api-crud-auth_backend
+- フロントエンド: nuxtjs-output-with-api-crud-auth_frontend
 - DB: mysql:8.0
 
 以下のコマンドで各コンテナのログを確認
