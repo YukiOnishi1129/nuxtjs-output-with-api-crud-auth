@@ -22,9 +22,9 @@ const fetchTodoDetail = async () => {
   if (typeof todoId === "string") {
     const paramTodoId = Number(todoId);
     if (isNaN(paramTodoId)) return;
-    const data = await fetchTodoDetailApi(paramTodoId);
-    if (data && typeof data !== "string") {
-      targetTodo.value = data;
+    const res = await fetchTodoDetailApi(paramTodoId);
+    if (res?.data) {
+      targetTodo.value = res.data;
     }
   }
 };

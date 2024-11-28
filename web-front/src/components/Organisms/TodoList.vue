@@ -20,12 +20,12 @@ const handleDelete = (id: string, title: string) => {
       <span class="task">{{ todo.title }}</span>
       <div class="area">
         <div class="far">
-          <NuxtLink :to="{ name: 'detail-id', params: { id: todo.id } }">
+          <NuxtLink :to="{ name: 'todo-detail-id', params: { id: todo.id } }">
             <font-awesome-icon class="far" icon="fa-circle-info" />
           </NuxtLink>
         </div>
         <div class="far">
-          <NuxtLink :to="{ name: 'edit-id', params: { id: todo.id } }">
+          <NuxtLink :to="{ name: 'todo-edit-id', params: { id: todo.id } }">
             <font-awesome-icon class="far" icon="fa-pen-to-square" />
           </NuxtLink>
         </div>

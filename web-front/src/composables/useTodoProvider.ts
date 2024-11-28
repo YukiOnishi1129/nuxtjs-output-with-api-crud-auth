@@ -12,8 +12,9 @@ export const useTodoProvider = () => {
   const searchKeyword = ref("");
 
   const fetchTodoList = async () => {
-    const data = await fetchTodoListApi();
-    if (Array.isArray(data)) originTodoList.value = data;
+    const res = await fetchTodoListApi();
+    if (!res.data) return;
+    originTodoList.value = res.data;
   };
 
   // 表示用のTodoリストを返す算出プロパティ
@@ -27,8 +28,8 @@ export const useTodoProvider = () => {
 
   const handleAddTodo = async (title: string, content: string) => {
     if (title.trim() !== "" && content.trim() !== "") {
-      const data = await createTodoApi(title, content);
-      if (data && typeof data !== "string") originTodoList.value.push(data);
+      const res = await createTodoApi(title, content);
+      if (res.data) originTodoList.value.push(res.data);
     }
   };
 
@@ -40,12 +41,12 @@ export const useTodoProvider = () => {
     if (title.trim() === "" || content.trim() === "") return;
     const todoId = Number(targetId);
     if (Number.isNaN(todoId)) return;
-    const data = await updateTodoApi(todoId, title, content);
-    if (data && typeof data !== "string") {
-      const newTodoList = originTodoList.value.map((todo) => {
-        return todo.id === todoId ? data : todo;
+    const res = await updateTodoApi(todoId, title, content);
+    if (res?.data) {
+      const updateTodo = res.data;
+      originTodoList.value = originTodoList.value.map((todo) => {
+        return todo.id === todoId ? updateTodo : todo;
       });
-      originTodoList.value = newTodoList;
     }
   };
 

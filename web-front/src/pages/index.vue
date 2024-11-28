@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TodoListTemplate from "../components/Templates/TodoListTemplate.vue";
+import SigninTemplate from "~/components/Templates/SigninTemplate.vue";
 </script>
 
 <template>
-  <TodoListTemplate />
+  <SigninTemplate />
 </template>

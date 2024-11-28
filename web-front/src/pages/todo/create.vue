@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TodoCreateTemplate from "../components/Templates/TodoCreateTemplate.vue";
+import TodoCreateTemplate from "../../components/Templates/TodoCreateTemplate.vue";
 </script>
 
 <template>
