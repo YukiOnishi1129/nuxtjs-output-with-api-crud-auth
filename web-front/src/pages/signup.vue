@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SignupTemplate from "../components/Templates/SignupTemplate.vue";
+</script>
 
 <template>
-  <div></div>
+  <SignupTemplate />
 </template>
