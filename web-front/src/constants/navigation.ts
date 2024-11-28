@@ -1,13 +1,17 @@
 export const NAVIGATION_LIST = {
-  TOP: `/`,
-  DETAIL: `/detail/:id`,
-  CREATE: `/create`,
-  EDIT: `/edit/:id`,
+  SIGNIN: "/",
+  SIGNUP: "/signup",
+  TOP: `/todo`,
+  DETAIL: `/todo/detail/:id`,
+  CREATE: `/todo/create`,
+  EDIT: `/todo/edit/:id`,
 };
 
 export const NAVIGATION_PATH = {
-  TOP: `/`,
-  DETAIL: `/detail/`,
-  CREATE: `/create`,
-  EDIT: `/edit/`,
+  SIGNIN: "/",
+  SIGNUP: "/signup",
+  TOP: `/todo`,
+  DETAIL: `/todo/detail/`,
+  CREATE: `/todo/create`,
+  EDIT: `/todo/edit/`,
 };
